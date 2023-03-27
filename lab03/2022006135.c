@@ -192,27 +192,33 @@ Stack* CreateStack(int max){
 }
 
 void DeleteStack(Stack* S){
+    //to delete stack == free the key which is array
     free(S->key);
 }
 
 void Push(Stack* S, int X){
+    //pushing element to the stack
     S->key[++S->top] = X;
 }
 
 int Pop(Stack* S){
+    //pop (top of the stack)
     int tmp = S->key[S->top];
     --S->top;
     return tmp;
 }
 
 int Top(Stack* S){
+    //return top of the stack
     return S->key[S->top];
 }
 
 int IsFull(Stack* S){
+    //checking wheter the stack is full or not
     return S->top == S->max_stack_size-1;
 }
 
 int IsEmpty(Stack* S){
+    //checking whether the stack is empty or not
     return S->top == -1;
 }
