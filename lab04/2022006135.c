@@ -51,7 +51,7 @@ int Insert(ThreadedPtr root, int root_idx, ElementType data, int idx) {
 		newNode->right_thread = 1;
 		newNode->right_child = root;
 		newNode->data = data;
-		return newNode->data;
+		return 1;
 	}
 
 	//cnt stands for the number of calculation to make idx to 1
@@ -120,7 +120,7 @@ int Insert(ThreadedPtr root, int root_idx, ElementType data, int idx) {
 		//set newNode's data
 		newNode->data = data;
 	}
-	return newNode->data;
+	return 1;
 }
 
 void printInorder(ThreadedPtr root){
