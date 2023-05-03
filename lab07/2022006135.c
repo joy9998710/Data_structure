@@ -116,7 +116,7 @@ Heap* percolateDown(Heap* heap, int idx){
     }
     //deciding to go to right or to left
     if(heap->Elements[leftidx] >= heap->Elements[rightidx]){
-        if(heap->Elements[idx] > heap->Elements[leftidx]){
+        if(heap->Elements[idx] < heap->Elements[leftidx]){
             int temp = heap->Elements[idx];
             heap->Elements[idx] = heap->Elements[leftidx];
             heap->Elements[leftidx] = temp;
@@ -124,10 +124,12 @@ Heap* percolateDown(Heap* heap, int idx){
         }
     }
     else if(heap->Elements[rightidx] > heap->Elements[leftidx]){
-        int temp = heap->Elements[idx];
-        heap->Elements[idx] = heap->Elements[rightidx];
-        heap->Elements[rightidx] = temp;
-        return percolateDown(heap, rightidx);
+        if(heap->Elements[idx] < heap->Elements[rightidx]){
+            int temp = heap->Elements[idx];
+            heap->Elements[idx] = heap->Elements[rightidx];
+            heap->Elements[rightidx] = temp;
+            return percolateDown(heap, rightidx);
+        }
     }
     return heap;
 }
