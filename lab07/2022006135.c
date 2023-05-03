@@ -123,6 +123,7 @@ Heap* percolateDown(Heap* heap, int idx){
             return percolateDown(heap, leftidx);
         }
     }
+    //decide wheter right idx is bigger than left or vise versa
     else if(heap->Elements[rightidx] > heap->Elements[leftidx]){
         if(heap->Elements[idx] < heap->Elements[rightidx]){
             int temp = heap->Elements[idx];
